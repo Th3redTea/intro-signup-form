@@ -9,6 +9,7 @@
   <title>Frontend Mentor | Intro component with sign up form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="./dist/styel.css">
 
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -32,16 +33,16 @@
 
     <div class="contact-form">
 
-      <form action="#" method="post">
-        <input type="text" name="firstName" placeholder="First name">
+      <form action="" method="POST">
+        <input type="text" name="firstName" placeholder="First name" id="firstName" >
         <br>
-        <input type="text" name="lastName" placeholder="Last name">
+        <input type="text" name="lastName" id="lastName" placeholder="Last name">
         <br>
         <input type="email" name="email" id="email" placeholder="Email Address">
         <br>
         <input type="password" name="password" id="password" placeholder="Password">
         <br>
-        <input type="submit" value="  Claim your free trial">
+        <button type="submit">Claim your free trial</button>
         <br>
       </form>
 
@@ -57,5 +58,7 @@
       Coded by <a href="#">Your Name Here</a>.
     </p>
   </footer>
+
+  <script src="./validation.js"></script>
 </body>
 </html>
