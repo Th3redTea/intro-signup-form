@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&display=swap');
 
-:root{
 
---red: hsl(0, 100%, 74%);
---greed: hsl(154, 59%, 51%);
---blue: hsl(248, 32%, 49%);
---dark-blue: hsl(249, 10%, 26%);
---greyish-blue: hsl(246, 25%, 77%);
+$red: hsl(0, 100%, 74%);
+$green: hsl(154, 59%, 51%);
+$blue: hsl(248, 32%, 49%);
+$dark-blue: hsl(249, 10%, 26%);
+$greyish-blue: hsl(246, 25%, 77%);
 
-
+@mixin box-shadow($x, $y, $z, $a, $color) {
+    box-shadow: $x $y $z $a  $color;
+-webkit-box-shadow:   $x $y $z $a  $color;
+-moz-box-shadow:  $x $y $z $a  $color;
 }
 
 
@@ -21,28 +23,111 @@ body{
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     background: url('./images/bg-intro-desktop.png');
-    background-color: var(--red);
+    background-color: $red;
     height: 800px;
 
 }
 
 main{
-    border: black 2px solid;
+    
     height: 651px ;
     width: 90%;
-    margin: 7vh auto;
+    margin: 0 auto;
     display: flex;
 }
 
 
 .text-about{
+    font-size: 1.3rem;
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: white;
+    margin: 0 50px;
 
-    h1,p{
-        margin: 10px 124px;
+    p{
+        font-size: 1rem;
     }
+
+}
+
+
+.contact-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    .try{
+        width: 80%;
+        color: white;
+        background-color: $blue;
+        margin-bottom: 20px;
+        padding: 25px;
+        border-radius: 10px;
+        font-size: 15px;
+        text-align: center;
+        @include box-shadow(0px, 8px, 0px, 0px, rgba(0,0,0,0.15))
+    }
+}
+
+
+.contact-form{
+    height: 70%;
+    width: 80%;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    @include box-shadow(0px, 8px, 0px, 0px, rgba(0,0,0,0.15));
+
+    
+
+    form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        
+
+        input{
+            margin: 2px 0px;
+            height: 50px;
+            width: 90%;
+            border: $greyish-blue 1px solid;
+            border-radius: 4px;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        button{
+            height: 50px;
+            width: 90%;
+            background-color: $green;
+            border-radius: 4px;
+            border: none;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            @include box-shadow(0px, 4px, 1px, 0px, hsl(154, 66%, 39%));
+        }
+
+        p{
+            color: $greyish-blue;
+            width: 80%;
+            font-size: 10px;
+            a{
+                color: $red;
+                text-decoration: none;
+            }
+        }
+    }
+
+
+
 }
