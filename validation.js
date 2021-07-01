@@ -1,10 +1,34 @@
-const firstValid = document.getElementById('firstName')
-const nameValid = document.getElementById('firstName')
-const emailValid = document.getElementById('firstName')
-const passwordValid = document.getElementById('firstName')
+const inputs = Object.entries(document.getElementsByTagName('input'))
 
-let firstLabel = document.createElement('label')
-let nameLabel = document.createElement('label')
-let emailLabel = document.createElement('label')
-let passwordLabel = document.createElement('label')
+const button = document.getElementById('form')
+
+
+function validation(){
+    inputs.map(item => {
+        let input = item[1];
+        let label = input.nextElementSibling;
+        let errorSvg = label.nextElementSibling;
+
+        if(input.value == ""){
+            input.style.border = "hsl(0, 100%, 74%) 2px solid"
+            label.style.visibility = "visible";
+            errorSvg.style.visibility = "visible";
+        }
+    })
+
+    return false
+}
+
+
+
+// function validation(){
+
+//     if(firstName.innerText == ""){
+//         let label = firstName.nextElementSibling; 
+//         console.log(label)
+//         firstName.
+//         label.style.visibility = "visible"
+//     }
+// }
+
 

@@ -22,18 +22,21 @@ $greyish-blue: hsl(246, 25%, 77%);
 body{
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    background: url('./images/bg-intro-desktop.png');
-    background-color: $red;
-    height: 800px;
+    background-image: url("../images/bg-intro-desktop.png");
+    background-color: rgba($red, 0.90);
 
 }
 
 main{
     
-    height: 651px ;
+    
     width: 90%;
     margin: 0 auto;
     display: flex;
+
+    @media only screen and (max-width: 720px) {
+        flex-direction: column;
+    }
 }
 
 
@@ -50,6 +53,12 @@ main{
         font-size: 1rem;
     }
 
+    @media only screen and (max-width: 720px) {
+        margin-top: 15px;
+        width: auto;
+        text-align: center;
+        font-size: 1rem;
+    }
 }
 
 
@@ -59,22 +68,29 @@ main{
     justify-content: center;
     align-items: center;
     width: 50%;
+    margin: 20px 0;
+
     .try{
         width: 80%;
         color: white;
         background-color: $blue;
         margin-bottom: 20px;
-        padding: 25px;
+        padding: 15px;
         border-radius: 10px;
         font-size: 15px;
         text-align: center;
         @include box-shadow(0px, 8px, 0px, 0px, rgba(0,0,0,0.15))
     }
+
+    @media only screen and (max-width: 720px) {
+        width: auto;
+        text-align: center;
+        
+    }
 }
 
 
 .contact-form{
-    height: 70%;
     width: 80%;
     background-color:white;
     display: flex;
@@ -83,28 +99,34 @@ main{
     border-radius: 10px;
     @include box-shadow(0px, 8px, 0px, 0px, rgba(0,0,0,0.15));
 
-    
+
 
     form{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        
 
+        .input-container{
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
         input{
-            margin: 2px 0px;
+            margin: 20px auto  0px auto;
             height: 50px;
             width: 90%;
             border: $greyish-blue 1px solid;
             border-radius: 4px;
             font-weight: bold;
             padding: 20px;
+            position: relative;
         }
 
+
         button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
             height: 50px;
             width: 90%;
             background-color: $green;
@@ -117,17 +139,42 @@ main{
             @include box-shadow(0px, 4px, 1px, 0px, hsl(154, 66%, 39%));
         }
 
+        button:hover{
+            background-color: rgba($green, 0.50);
+        }
+
+
         p{
             color: $greyish-blue;
-            width: 80%;
+            width: 90%;
             font-size: 10px;
+            margin: 0 auto 40px auto;
+            text-align: center;
             a{
                 color: $red;
                 text-decoration: none;
             }
+        }
+
+        label{
+           font-size: 0.8rem;
+           text-align: right;
+           color: $red;
+           width: 90%;
+           font-style: italic;
+           margin: 0 auto;
+           visibility: hidden;
+           
+        }
+
+        svg{
+            position: absolute;
+            right: 40px;
+            visibility: hidden;
         }
     }
 
 
 
 }
+

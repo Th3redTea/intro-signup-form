@@ -33,17 +33,37 @@
 
     <div class="contact-form">
 
-      <form action="" method="POST">
-        <input type="text" name="firstName" placeholder="First name" id="firstName" >
-        <br/>
-        <input type="text" name="lastName" id="lastName" placeholder="Last name">
-        <br/>
-        <input type="email" name="email" id="email" placeholder="Email Address">
-        <br/>
-        <input type="password" name="password" id="password" placeholder="Password">
-        <br/>
-        <button type="submit">Claim your free trial</button>
-        <br/>
+      <form onsubmit="return validation()" id="form">
+
+        <div class="input-container">
+          <input  type="text" name="firstName" placeholder="First name" id="firstName" >
+          <label for="firstName">First name can't be empty</label>
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+        </div>
+
+        <div class="input-container">
+          <input type="text" name="lastName" id="lastName" placeholder="Last name">
+          <label for="lastName">Last name can't be empty</label>
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+        </div>
+
+        <div class="input-container">
+
+          <input type="email" name="email" id="email" placeholder="Email Address">
+          <label for="email">Email name can't be empty</label>
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+        </div>
+
+
+        <div class="input-container">
+
+          <input type="password" name="password" id="password" placeholder="Password">
+          <label for="password">Password can't be empty</label>
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+        </div>
+
+        <button id="button" type="submit">Claim your free trial</button>
+        
         <p>By clicking the button, you are agreeing to our <a href="#"> Terms and Services</a></p>
       </form>
 
